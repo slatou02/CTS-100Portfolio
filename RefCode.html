@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Nathan Latour – Tecsar Engineering</title>
+
+ 
+
+  <!-- Google Fonts -->
+
+  <link href=https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600&display=swap rel="stylesheet">
+
+ 
+
+  <style>
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body { font-family: 'Roboto', sans-serif; color: #333; line-height: 1.6; background-color: #f9f9f9; }
+
+ 
+
+    /* Sticky Header & Navigation */
+
+    header {
+
+      background-color: #1f2937;
+
+      color: #fff;
+
+      position: sticky;
+
+      top: 0;
+
+      z-index: 1000;
+
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+
+    }
+
+    nav { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: auto; padding: 10px 20px; }
+
+    nav .logo { font-family: 'Montserrat', sans-serif; font-size: 24px; font-weight: 700; color: #fff; text-decoration: none; }
+
+    nav ul { list-style: none; display: flex; gap: 20px; }
+
+    nav ul li { position: relative; }
+
+    nav ul li a { color: #fff; text-decoration: none; padding: 8px 12px; transition: 0.3s; border-radius: 4px; }
+
+    nav ul li a:hover { background-color: #374151; }
+
+    nav ul li ul { position: absolute; top: 40px; right: 0; background-color: #1f2937; min-width: 180px; display: none; flex-direction: column; border-radius: 4px; }
+
+    nav ul li ul li a { padding: 10px 15px; text-align: left; }
+
+    nav ul li:hover > ul { display: flex; flex-direction: column; }
+
+ 
+
+    /* Hero Banner */
+
+    .banner {
+
+      background: url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?fit=crop&w=1350&q=80') no-repeat center center/cover;
+
+      color: #fff;
+
+      display: flex;
+
+      flex-direction: column;
+
+      align-items: center;
+
+      justify-content: center;
+
+      text-align: center;
+
+      padding: 120px 20px 60px;
+
+    }
+
+    .banner h1 { font-family: 'Montserrat', sans-serif; font-size: 48px; font-weight: 700; margin-bottom: 15px; text-shadow: 2px 2px 8px rgba(0,0,0,0.6); }
+
+    .banner h2 { font-size: 24px; font-weight: 400; color: #e5e7eb; text-shadow: 1px 1px 6px rgba(0,0,0,0.6); }
+
+ 
+
+    /* Main layout */
+
+    main { display: flex; max-width: 1200px; margin: 40px auto; padding: 0 20px; gap: 20px; }
+
+    .content { flex: 3; }
+
+    .sidebar {
+
+      flex: 1;
+
+      background-color: #fff;
+
+      padding: 15px;
+
+      border-radius: 8px;
+
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+
+      position: sticky;
+
+      top: 100px;
+
+      max-height: calc(100vh - 120px);
+
+      overflow-y: auto;
+
+    }
+
+    .sidebar h3 { margin-bottom: 12px; font-size: 20px; color: #1f2937; border-bottom: 2px solid #e5e7eb; padding-bottom: 5px; }
+
+    .sidebar ul { list-style: disc inside; font-size: 15px; line-height: 1.6; }
+
+    .sidebar ul li { margin-bottom: 6px; }
+
+ 
+
+    /* Sections */
+
+    section { margin-bottom: 60px; }
+
+    section h2 { font-family: 'Montserrat', sans-serif; font-size: 28px; color: #1f2937; margin-bottom: 20px; border-bottom: 3px solid #3b82f6; display: inline-block; padding-bottom: 5px; }
+
+    section p { font-size: 17px; margin-bottom: 15px; color: #4b5563; }
+
+ 
+
+    /* Projects grid */
+
+    .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+
+    .project-card { background-color: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08); transition: transform 0.3s, box-shadow 0.3s; }
+
+    .project-card:hover { transform: translateY(-5px); box-shadow: 0 8px 24px rgba(0,0,0,0.15); }
+
+    .project-card img { width: 100%; height: 180px; object-fit: cover; }
+
+    .project-card-content { padding: 15px; }
+
+    .project-card h3 { font-size: 20px; margin-bottom: 10px; color: #1f2937; }
+
+    .project-card p { color: #6b7280; }
+
+ 
+
+    /* Footer */
+
+    footer { background-color: #1f2937; color: #fff; padding: 30px 20px; margin-top: 40px; }
+
+    footer a { color: #3b82f6; text-decoration: none; }
+
+    footer a:hover { text-decoration: underline; }
+
+    .footer-columns { display: flex; justify-content: center; gap: 50px; flex-wrap: wrap; margin-top: 10px; }
+
+    .footer-columns div h4 { margin-bottom: 8px; }
+
+ 
+
+    /* Responsive */
+
+    @media(max-width: 1024px) { main { flex-direction: column; } .sidebar { position: relative; top: 0; max-height: none; } }
+
+    @media(max-width: 768px) { nav ul { flex-direction: column; align-items: flex-end; gap: 10px; } .banner h1 { font-size: 36px; } .banner h2 { font-size: 20px; } }
+
+  </style>
+
+</head>
+
+<body>
+
+ 
+
+  <!-- Header & Nav -->
+
+  <header>
+
+    <nav>
+
+      <a href="#" class="logo">Nathan Latour</a>
+
+      <ul>
+
+        <li><a href="#">Home</a></li>
+
+        <li>
+
+          <a href="#">Services ▾</a>
+
+          <ul>
+
+            <li><a href="#">Consulting</a></li>
+
+            <li><a href="#">Engineering</a></li>
+
+            <li><a href="#">Project Management</a></li>
+
+          </ul>
+
+        </li>
+
+        <li>
+
+          <a href="#">About ▾</a>
+
+          <ul>
+
+            <li><a href="#">Company</a></li>
+
+            <li><a href="#">Team</a></li>
+
+          </ul>
+
+        </li>
+
+        <li><a href="#">Contact</a></li>
+
+      </ul>
+
+    </nav>
+
+  </header>
+
+ 
+
+  <!-- Hero Banner -->
+
+  <div class="banner">
+
+    <h1>Nathan Latour, P. Eng., P. E.</h1>
+
+    <h2>Process Engineering Lead</h2>
+
+  </div>
+
+ 
+
+  <!-- Main Content -->
+
+  <main>
+
+    <div class="content">
+
+      <section id="work-experience">
+
+        <h2>Summary of Work Experience</h2>
+
+        <p>Over 15 years of experience in process engineering, energy conversion, and project management for industrial facilities.</p>
+
+        <p>Specializes in converting steam turbine-driven equipment to electric motor-driven systems for improved energy efficiency and reduced emissions.</p>
+
+      </section>
+
+ 
+
+      <section id="tecsar-history">
+
+        <h2>History of Tecsar Engineering</h2>
+
+        <p>Tecsar Engineering has been providing innovative engineering solutions for over two decades, specializing in process design, energy optimization, and industrial consulting.</p>
+
+      </section>
+
+ 
+
+      <section id="about-me">
+
+        <h2>About Me</h2>
+
+        <p>I am passionate about helping clients achieve measurable improvements in efficiency, safety, and environmental performance through practical engineering solutions.</p>
+
+      </section>
+
+ 
+
+      <section id="recent-projects">
+
+        <h2>Recent Projects</h2>
+
+        <div class="projects">
+
+          <div class="project-card">
+
+            <img src=https://images.unsplash.com/photo-1507525428034-b723cf961d3e?fit=crop&w=800&q=80 alt="Clownfish">
+
+            <div class="project-card-content">
+
+              <h3>Ethanol Production Facility Upgrade</h3>
+
+              <p>Completed detailed engineering for fuel-grade ethanol production facilities with improved process efficiency and reduced emissions.</p>
+
+            </div>
+
+          </div>
+
+          <div class="project-card">
+
+            <img src=https://images.unsplash.com/photo-1518837695005-2083093ee35b?fit=crop&w=800&q=80 alt="Tropical Fish">
+
+            <div class="project-card-content">
+
+              <h3>Fired Equipment Optimization</h3>
+
+              <p>Implemented engineering solutions to reduce NOx emissions and improve energy efficiency across multiple industrial units.</p>
+
+            </div>
+
+          </div>
+
+          <div class="project-card">
+
+            <img src=https://images.unsplash.com/photo-1573156342304-bb09457f6e6c?fit=crop&w=800&q=80 alt="Blue Tang">
+
+            <div class="project-card-content">
+
+              <h3>Steam to Electric Conversion</h3>
+
+              <p>Led a project converting steam turbine-driven equipment to electric motors, achieving significant energy savings and lower greenhouse gas emissions.</p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </div>
+
+ 
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+      <h3>Fun Facts About Me</h3>
+
+      <ul>
+
+        <li>Grew up in Sarnia, Ontario</li>
+
+        <li>Love animals: Black German Shepherd & pet fish</li>
+
+        <li>Collect vinyl records</li>
+
+        <li>Learning to play bass guitar</li>
+
+        <li>Enjoy family cottage trips</li>
+
+        <li>Outdoor hobbies: fishing, boating, canoeing, ATV trails</li>
+
+        <li>Stargazing & campfires</li>
+
+        <li>Studying Software Engineering at Guelph University</li>
+
+        <li>Passionate about programming & problem solving</li>
+
+        <li>Looking for first co-op employment</li>
+
+      </ul>
+
+    </aside>
+
+  </main>
+
+ 
+
+  <!-- Footer -->
+
+  <footer>
+
+    <p>&copy; 2025 Nathan Latour – Tecsar Engineering</p>
+
+    <div class="footer-columns">
+
+      <div>
+
+        <h4>Contact</h4>
+
+        <p>Tecsar Engineering<br>123 Main Street, Sarnia, Ontario</p>
+
+      </div>
+
+      <div>
+
+        <h4>Links</h4>
+
+        <a href=https://www.tecsar.com target="_blank">Website</a><br>
+
+        <a href=https://www.linkedin.com/in/your-linkedin target="_blank">LinkedIn</a>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+ 
+
+</body>
+
+</html>
+
+ 
