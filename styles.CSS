@@ -333,8 +333,9 @@ header{
     }
 
     .art-sections {
-      display: flex;
+      display: inline;
       flex-direction: column; /* stack Ink and Paintings vertically */
+      flex-flow: wrap;
       width: 100%;            /* full width */
     }
 
@@ -440,4 +441,34 @@ header{
       font-size: 17px; 
       margin-bottom: 15px; 
       color: #4b5563; 
+    }
+
+    .TextPage{
+      display: inline-block;
+      background-color: #fff; 
+      border-radius: 8px; 
+      overflow: hidden;     
+      width: 90%;
+      padding: 10px;
+      
+    }
+    .TextPageContent{
+      display: inline-block;
+      vertical-align: top;
+
+    }
+    .TextPageContent p{
+      font-size: 17px; 
+      margin-bottom: 15px; 
+      color: #4b5563; 
+
+    }
+
+    .TextPageContent h2{
+      font-family: 'Montserrat', sans-serif; 
+      font-size: 28px; color: #1f2937; 
+      margin-bottom: 20px; 
+      border-bottom: 3px solid #3b82f6; 
+      display: inline-block; 
+      padding-bottom: 5px; 
     }
