@@ -483,7 +483,6 @@ header{
       overflow: hidden; 
       box-shadow: 0 4px 12px rgba(0,0,0,0.08); 
       transition: transform 0.3s, box-shadow 0.3s; 
-      width: 333;
       text-align: center;
     }
 
@@ -496,11 +495,7 @@ header{
       text-align: center;
       display: flex;
     }
-    .imageView{
-      width:90%;
-      text-align: center;
-      display: flex;
-    }
+
     .backlink{
       display: inline-block;
       background-color: #fff; 
@@ -508,7 +503,6 @@ header{
       overflow: hidden; 
       box-shadow: 0 4px 12px rgba(0,0,0,0.08); 
       transition: transform 0.3s, box-shadow 0.3s; 
-      width: 333;
       text-align: center;
     }
     .backlink a{
@@ -518,6 +512,6 @@ header{
     }
     .backlink:hover{
       display: inline-block;
-            transform: translateY(-5px); 
+      transform: translateY(-5px); 
       box-shadow: 0 8px 24px rgba(0,0,0,0.15); 
     }
